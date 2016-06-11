@@ -2,58 +2,55 @@
 
 ### Java JDK y Android SDK
 
-The JDK is a subset of what is loosely defined as a software development kit (SDK) in the general sense. In the descriptions which accompany their recent releases for Java SE, EE, and ME, Sun acknowledge that under their terminology, the JDK forms the subset of the SDK which is responsible for the writing and running of Java programs. The remainder of the SDK is composed of extra software, such as Application Servers, Debuggers, and Documentation.
+El JDK es un subconjunto de lo que se define en términos generales como un kit de desarrollo de software (SDK) en el sentido general. En las descripciones que acompañan a sus versiones más recientes de Java SE, EE y ME, Sun reconoce que en virtud de su terminología, el JDK forma el subconjunto del SDK que se encarga de la redacción y ejecución de programas Java. El resto del SDK se compone de software adicional, tales como servidores de aplicaciones, depuradores, y documentación.
 
-The Android SDK (software development kit) is a set of development tools used to develop applications for Android platform. The Android SDK includes the following:
-Required libraries
-Debugger
-An emulator
-Relevant documentation for the Android application program interfaces (APIs)
-Sample source code
-Tutorials for the Android OS
+El SDK de Android (kit de desarrollo de software) es un conjunto de herramientas de desarrollo utilizadas para desarrollar aplicaciones para la plataforma Android. El SDK de Android incluye lo siguiente:
 
-
+- Bibliotecas necesarias.
+- Depurador.
+- Un emulador.
+- La documentación pertinente para las interfaces de programación de aplicaciones de Android (API).
+- Código fuente de ejemplo.
+- Tutoriales para el sistema operativo Android.
 
 ### Instalando y usando Android Studio
 
-https://developer.android.com/studio/install.html
+[Instalador](https://developer.android.com/studio/install.html)
 
-Android Studio is the official Integrated Development Environment (IDE) for Android app development, based on IntelliJ IDEA . On top of IntelliJ's powerful code editor and developer tools, Android Studio offers even more features that enhance your productivity when building Android apps, such as:
+Android Studio es la herramienta de entorno de desarrollo integrado (IDE) para el desarrollo de aplicaciones para Android, basado en IntelliJ IDEA. En la parte superior de potentes herramientas de edición de código y desarrolladores de IntelliJ, Android Studio ofrece aún más características que mejoran su productividad en la construcción de aplicaciones de Android, tales como:
 
-A flexible Gradle-based build system
-A fast and feature-rich emulator
-A unified environment where you can develop for all Android devices
-Instant Run to push changes to your running app without building a new APK
-Code templates and GitHub integration to help you build common app features and import sample code
-Extensive testing tools and frameworks
-Lint tools to catch performance, usability, version compatibility, and other problems
-C++ and NDK support
-Built-in support for Google Cloud Platform, making it easy to integrate Google Cloud Messaging and App Engine
-This page provides an introduction to basic Android Studio features. For a summary of the latest changes, see Android Studio Release Notes.
+- Un sistema de construcción basado en Gradle flexibles.
+- Un emulador rápido y varias funciones extras.
+- Un entorno único en el que se pueden desarrollar para todos los dispositivos Android.
+- Ejecución instantánea para actualizar cambios a su aplicación en ejecución sin necesidad de construir un nuevo APK.
+- Plantillas de código y la integración GitHub para ayudarle a construir características de la aplicación comunes y código de ejemplo de importación.
+- Extensas herramientas de prueba.
+- Herramientas para medir rendimiento, facilidad de uso, compatibilidad de versiones, y otros problemas.
+- El soporte integrado para Google Cloud Platform, por lo que es fácil de integrar GCM y App Engine.
 
 ### Hola mundo - Primera app
 
-1. In Android Studio, create a new project:
-	- If you don't have a project opened, in the Welcome screen, click New Project.
-	- If you have a project opened, from the File menu, select New Project. The Create New Project screen appears.
+1. En Android Studio, crear un nuevo proyecto:
+	- Si todavía no has abierto un proyecto, en la pantalla de bienvenida, haga clic en Nuevo proyecto.
+	- Si has abierto un proyecto, en el menú Archivo, seleccione Nuevo proyecto. Aparece la pantalla Crear nuevo proyecto.
 
-2. Fill out the fields on the screen, and click Next.
+2. Rellene los campos de la pantalla y haga clic en Next.
 
-	It is easier to follow these lessons if you use the same values as shown.
-	- **Application Name** is the app name that appears to users. For this project, use "My First App."
-	- **Company domain** provides a qualifier that will be appended to the package name; Android Studio will remember this qualifier for each new project you create.
-	- **Package name** is the fully qualified name for the project (following the same rules as those for naming packages in the Java programming language). Your package name must be unique across all packages installed on the Android system. You can Edit this value independently from the application name or the company domain.
-	- **Project location** is the directory on your system that holds the project files.
+	Es más fácil de seguir este capitulo si utiliza los mismos valores como se muestra.
+	- **Application Name** es el nombre de la aplicación que aparece a los usuarios.
+	- **Company domain** proporciona un calificador que se añadirá al nombre del paquete; Android Studio recordará este valor para cada nuevo proyecto se crea.
+	- **Package name** es el nombre completo para el proyecto (siguiendo las mismas reglas que las de denominación de paquetes en el lenguaje de programación Java). Su nombre del paquete debe ser único en todos los paquetes instalados en el sistema Android. Puede editar este valor independientemente del nombre de la aplicación o en el dominio de la empresa.
+	- **Project location** es el directorio en el sistema que guardan los archivos de proyecto.
 
-3. Under **Select the form factors your app will run on**, check the box for **Phone and Tablet**.
+3. En **Select the form factors your app will run on**, selecciona la opción **Phone and Tablet**.
 
-4. For **Minimum SDK**, select API 15: Android 4.0.3 (IceCreamSandwich).
+4. Para **Minimum SDK**, selecciona API 15: Android 4.0.3 (IceCreamSandwich).
 
-	The Minimum Required SDK is the earliest version of Android that your app supports, indicated using the API level. To support as many devices as possible, you should set this to the lowest version available that allows your app to provide its core feature set. If any feature of your app is possible only on newer versions of Android and it's not critical to the app's core feature set, you can enable the feature only when running on the versions that support it (as discussed in Supporting Different Platform Versions).
+	El SDK Obligatorio mínimo es la primera versión de Android que sus soportes de aplicaciones, indican usando el nivel de la API. Para soportar el mayor numero de dispositivos que sea posible, debe establecer este a la versión más baja disponible que abarque el mayor numero de usuarios o su mercado deseado. Si alguna de las funciones de su aplicación sólo es posible en las versiones más recientes de Android y no es crítica para el conjunto de características de la aplicación, se puede habilitar la función sólo cuando se ejecuta en las versiones que lo soportan.
 
-5. Leave all of the other options (TV, Wear, and Glass) unchecked and click **Next**.
+5. Dejar las otras opciones (TV, Wear, y Glass) sin seleccionar y click **Next**.
 
-6. Under **Add an activity to <template>**, select **Blank Activity** and click **Next**.
+6. En **Add an activity to <template>**, seleccionar **Empty Activity** y click **Next**.
 
 7. Deja las opciones como las sugieren y click en **Next**.
 
@@ -555,7 +552,7 @@ Whether you're using Android Studio or the command line, to run your app on the 
 4. Select the desired system version for the AVD and click Next.
 5. Verify the configuration settings, then click Finish.
 
-For more information about using AVDs, see [Managing AVDs with AVD Manager](https://developer.android.com/studio/run/managing-avds.html.)
+For more information about using AVDs, see [Managing AVDs with AVD Manager](https://developer.android.com/studio/run/managing-avds.html)
 
 ##### Run the app from Android Studio
 1. In Android Studio, select your project and click Run   from the toolbar.
