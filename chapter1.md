@@ -43,9 +43,6 @@ https://source.android.com/
 
 ![imagen framework][image1]
 
-
-[image1]: https://source.android.com/images/android_framework_details.png "Android Framework"
-
 ### Definir idea de una app
 
 Durante el transcurso del curso estaremos trabajando con diferentes recursos importantes para el desarrollo de aplicaciones en android con la finalidad de desarrollar una app con utilidad propia, por lo que la tarea es conceptualizar una app que cumpla con los siguientes requisitos:
@@ -54,3 +51,5 @@ Durante el transcurso del curso estaremos trabajando con diferentes recursos imp
 + Solicitar información al usuario
 + Mostrar información a usuarios recuperada desde un servidor
 + Uso de imágenes.
+
+[image1]: https://source.android.com/images/android_framework_details.png "Android Framework"
