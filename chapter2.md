@@ -50,7 +50,7 @@ Android Studio es la herramienta de entorno de desarrollo integrado (IDE) para e
 
 5. Dejar las otras opciones (TV, Wear, y Glass) sin seleccionar y click **Next**.
 
-6. En **Add an activity to <template>**, seleccionar **Empty Activity** y click **Next**.
+6. En **Add an activity to < template >**, seleccionar **Empty Activity** y click **Next**.
 
 7. Deja las opciones como las sugieren y click en **Next**.
 
@@ -60,80 +60,85 @@ Android Studio es la herramienta de entorno de desarrollo integrado (IDE) para e
 
 <img src="https://developer.android.com/studio/images/intro/project-android-view_2-1_2x.png" width="300">
 
-Each project in Android Studio contains one or more modules with source code files and resource files. Types of modules include:
+Cada proyecto en Android Studio contiene uno o más módulos con archivos de código fuente y archivos de recursos. Tipos de módulos incluyen:
 
-Android app modules
-Library modules
-Google App Engine modules
-By default, Android Studio displays your project files in the Android project view, as shown in figure 1. This view is organized by modules to provide quick access to your project's key source files.
+- Módulos de aplicaciones para Android.
+- Módulos de biblioteca.
+- Módulos de Google App Engine.
 
-All the build files are visible at the top level under Gradle Scripts and each app module contains the following folders:
+De forma predeterminada, Android Studio muestra los archivos del proyecto en la vista del proyecto Android, como se muestra en la imagen anterior. Este punto de vista está organizado por módulos para proporcionar un acceso rápido a los archivos de fuentes esenciales de su proyecto.
 
-manifests: Contains the AndroidManifest.xml file.
-java: Contains the Java source code files, including JUnit test code.
-res: Contains all non-code resources, such as XML layouts, UI strings, and bitmap images.
-The Android project structure on disk differs from this flattened representation. To see the actual file structure of the project, select Project from the Project dropdown (in figure 1, it's showing as Android).
+Todos los archivos construidos son visibles en el nivel superior bajo Scripts Gradle y cada módulo de aplicación contiene las siguientes carpetas:
 
-You can also customize the view of the project files to focus on specific aspects of your app development. For example, selecting the Problems view of your project displays links to the source files containing any recognized coding and syntax errors, such as a missing XML element closing tag in a layout file.
+**manifests:** Contiene el archivo AndroidManifest.xml.
+
+**java:** Contiene los archivos de código fuente de Java, incluyendo el código de prueba JUnit.
+
+**res:** Contiene todos los recursos de no código, tales como diseños de XML, string de la IU, y las imágenes.
+
+La estructura del proyecto Android en el disco se diferencia de esta representación aplanada. Para ver la estructura de archivos real del proyecto, seleccione Proyecto en el menú desplegable del proyecto.
+
+También puede personalizar la vista de los archivos de proyecto para centrarse en aspectos específicos de su desarrollo de aplicaciones. Por ejemplo, la selección de la vista Problemas de su proyecto muestra enlaces a los archivos de origen que contengan cualquier error de sintaxis de codificación y reconocidos, como un elemento XML que falta la etiqueta de cierre en un archivo de diseño.
+
+##### Los archivos generados para el proyecto
 
 **app/src/main/res/layout/activity_main.xml**
 
-	This XML layout file is for the activity you added when you created the project with Android Studio. Following the New Project workflow, Android Studio presents this file with both a text view and a preview of the screen UI. The file contains some default interface elements from the material design library, including the app bar and a floating action button. It also includes a separate layout file with the main content.
-	This XML layout file resides in activity_my.xml, and contains some settings and a TextView element that displays the message, "Hello world!".
+	Este archivo XML es el diseño de la actividad que ha añadido al crear el proyecto con Android Studio. Siguiendo el flujo de trabajo Nuevo proyecto, Android Studio presenta este archivo tanto con una vista de texto y una vista previa de la interfaz de usuario de pantalla. El archivo contiene algunos ajustes y un elemento de Vista de Texto que muestra el mensaje "Hola mundo!".
 
 **app/src/main/java/com.....myappname/MainActivity.java**
 
-	A tab for this file appears in Android Studio when the New Project workflow finishes. When you select the file you see the class definition for the activity you created. When you build and run the app, the Activity class starts the activity and loads the layout file that says "Hello World!"
+	Una pestaña de este archivo aparece en Android Studio cuando el flujo de trabajo Nuevo proyecto termina. Cuando se selecciona el archivo que aparece la definición de clase para la actividad que ha creado. Cuando se construye y ejecuta la aplicación, el tipo de actividad se inicia la actividad y carga el archivo de diseño que dice "Hello World!"
 
 **app/src/main/AndroidManifest.xml**
 
-	The manifest file describes the fundamental characteristics of the app and defines each of its components. You'll revisit this file as you follow these lessons and add more components to your app.
+	El archivo de manifiesto describe las características fundamentales de la aplicación y define cada uno de sus componentes. Vas a volver a este archivo como sigue estas lecciones y añadir más componentes de la aplicación.
 
 **app/build.gradle**
 
-	Android Studio uses Gradle to compile and build your app. There is a build.gradle file for each module of your project, as well as a build.gradle file for the entire project. Usually, you're only interested in the build.gradle file for the module, in this case the app or application module. This is where your app's build dependencies are set, including the defaultConfig settings:
+	Android Studio utiliza Gradle para compilar y construir su aplicación. Hay un archivo build.gradle para cada módulo de su proyecto, así como un archivo build.gradle para todo el proyecto. Por lo general, sólo está interesado en el archivo build.gradle para el módulo, en este caso la aplicación o módulo de aplicación. Aquí es donde se encuentran las dependencias de construcción de tu aplicación, incluyendo la configuración defaultConfig:
 
-		- compiledSdkVersion is the platform version against which you will compile your app. By default, this is set to the latest version of Android available in your SDK. (It should be Android 4.1 or greater; if you don't have such a version available, you must install one using the SDK Manager.) You can still build your app to support older versions, but setting this to the latest version allows you to enable new features and optimize your app for a great user experience on the latest devices.
+- **CompiledSdkVersion** es la versión de la plataforma contra la que va a compilar su aplicación. De forma predeterminada, esto se establece en la última versión de Android disponible en el SDK. (Debe ser Android 4.1 o superior; si no tiene una versión de dicha disposición, debe instalar uno utilizando el SDK Manager.) Todavía se puede construir su aplicación para apoyar a las versiones anteriores, pero este valor está a la última versión que permite para habilitar nuevas características y optimizar su aplicación para una gran experiencia de usuario en los dispositivos más recientes.
 
-		- applicationId is the fully qualified package name for your application that you specified during the New Project workflow.
+- **applicationId** es el nombre de paquete completo para su aplicación que ha especificado durante el flujo de trabajo en Nuevo proyecto.
 
-		- minSdkVersion is the Minimum SDK version you specified during the New Project workflow. This is the earliest version of the Android SDK that your app supports.
+- **minSdkVersion** es la versión del SDK mínimo especificado durante el flujo de trabajo en Nuevo proyecto. Esta es la primera versión del SDK de Android que soporta la aplicación.
 
-		- targetSdkVersion indicates the highest version of Android with which you have tested your application. As new versions of Android become available, you should test your app on the new version and update this value to match the latest API level and thereby take advantage of new platform features. For more information, read Supporting Different Platform Versions.
+- **targetSdkVersion** indica la versión más alta de Android con la que ha probado su aplicación. A medida que las nuevas versiones de Android estén disponibles, se debería probar la aplicación en la nueva versión y actualizar este valor para que coincida con el último nivel de la API y de esta manera aprovechar las nuevas características de la plataforma. Para obtener más información, lea soportar a las diferentes versiones de la plataforma.
 
 **drawable-< density >/**
 
-	Directories for drawable resources, other than launcher icons, designed for various densities.
+	Directorios de recursos imagenes y otros, distintos de los iconos de la app, diseñados para varias densidades.
 
 **layout/**
 
-	Directory for files that define your app's user interface like activity_my.xml, discussed above, which describes a basic layout for the MyActivity class.
+	Directorio para los archivos que definen la interfaz de usuario de la aplicación como activity_main.xml, discutido anteriormente, que describe un diseño básico para la clase de actividad.
 
 **menu/**
 
-	Directory for files that define your app's menu items.
+	Directorio para los archivos que definen elementos de menú de la aplicación.
 
 **mipmap/**
 
-	Launcher icons reside in the mipmap/ folder rather than the drawable/ folders. This folder contains the ic_launcher.png image that appears when you run the default app.
+	Los iconos Lanzadores residen en la carpeta mipmap/ en lugar de la carpeta drawable/. Esta carpeta contiene la imagen ic_launcher.png que aparece cuando se ejecuta la aplicación por defecto.
 
 **values/**
 
-	Directory for other XML files that contain a collection of resources, such as string and color definitions.
+	Directorio para otros archivos XML que contienen una colección de recursos, como los textos y colores.
 
 #### The User Interface
 
 <img src="https://developer.android.com/studio/images/intro/main-window_2-1_2x.png" width="700">
 
-1. The toolbar lets you carry out a wide range of actions, including running your app and launching Android tools.
-2. The navigation bar helps you navigate through your project and open files for editing. It provides a more compact view of the structure visible in the Project tool window.
-3. The editor window is where you create and modify code. Depending on the current file type, this window can change. For example, when viewing a layout file, the editor window displays the layout editor and offers the option to view the corresponding XML file.
-4. Tool windows give you access to specific tasks like project management, search, version control, and more. You can expand them and collapse them.
-5. The status bar displays the status of your project and the IDE itself, as well as any warnings or messages.
+1. La barra de herramientas le permite llevar a cabo una amplia gama de acciones, incluyendo la ejecución de la aplicación y el lanzamiento de herramientas de Android.
 
-	You can organize the main window to give yourself more screen space by hiding or moving toolbars and tool windows. You can also use keyboard shortcuts to access most IDE features.
+2. La barra de navegación le ayuda a navegar a través de su proyecto y los archivos abiertos para su edición. Proporciona una visión más compacta de la estructura visible en la ventana de herramientas del proyecto.
 
-	At any time, you can search across your source code, databases, actions, elements of the user interface, and so on, by double-pressing the Shift key, or clicking the magnifying glass in the upper right-hand corner of the Android Studio window. This can be very useful if, for example, you are trying to locate a particular IDE action that you have forgotten how to trigger.
+3. La ventana del editor es donde puede crear y modificar el código. Dependiendo del tipo de archivo actual, esta ventana puede cambiar. Por ejemplo, al ver un archivo de diseño, la ventana de edición muestra el editor de diseño y ofrece la opción de ver el archivo XML correspondiente.
+
+4. Ventanas de herramientas le dan acceso a tareas específicas como gestión de proyectos, búsqueda, control de versiones, y mucho más. Puede expandirlos y contraerlos.
+
+5. La barra de estado muestra el estado de su proyecto y el propio IDE, así como mensajes o avisos.
 
 #### The Gradle Settings File
 
