@@ -1,5 +1,9 @@
 # Modulo 1 - Introducción al mundo de Android
 
+### Java para Android Cheat Sheet and Quick Ref
+
+http://www.raywenderlich.com/wp-content/uploads/2015/10/RW-Java-Cheatsheet-1_0.pdf
+
 ### ¿Que es Android?
 
 Android es un sistema operativo inicialmente pensado para teléfonos móviles, al igual que iOS, Symbian y Blackberry OS. Lo que lo hace diferente es que está basado en Linux, un núcleo de sistema operativo libre, gratuito y multiplataforma.
@@ -13,6 +17,8 @@ Google acaba de publicar el código fuente de la versión final de Android 6.0 (
 https://source.android.com/
 
 ### Versiones de Android
+
+https://developer.android.com/about/dashboards/index.html#Platform
 
 |Code name	|Version	|API level
 | ------------- |:-------------:| -----:|
@@ -52,4 +58,7 @@ Durante el transcurso del curso estaremos trabajando con diferentes recursos imp
 + Mostrar información a usuarios recuperada desde un servidor
 + Uso de imágenes.
 
+###[Siguiente Capitulo](/chapter2.md)
+
 [image1]: https://source.android.com/images/android_framework_details.png "Android Framework"
+

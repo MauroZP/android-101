@@ -8,3 +8,5 @@ En este ejercicio vamos a implementar todos los métodos del ciclo de vida de la
 3. Ejecuta la aplicación y observa la secuencia de Toast.
 4. Selecciona la opción cambiar de aplicacion y luego regresa a la actividad. Observa la secuencia de Toast.
 5. Sal de la actividad y observa la secuencia de Toast.
+
+###[Siguiente Capitulo](/chapter3.md)
