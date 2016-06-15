@@ -2,13 +2,12 @@
 
 ### Introducción
 
-The graphical user interface for an Android app is built using a hierarchy of View and ViewGroup objects. View objects are usually UI widgets such as buttons or text fields. ViewGroup objects are invisible view containers that define how the child views are laid out, such as in a grid or a vertical list.
+La interfaz gráfica de usuario para una aplicación de Android está construido usando Layouts y ViewGroups. View objects por lo general son UI widgets, tales como botones o campos de texto. ViewGroups son invisibles contenedores de vista que definen cómo se distribuyen los puntos de vista hijos, tal como en una tabla o una lista vertical.
 
-Android provides an XML vocabulary that corresponds to the subclasses of View and ViewGroup so you can define your UI in XML using a hierarchy of UI elements.
+Android proporciona un vocabulario XML que corresponde a las subclases de View y ViewGroup para que pueda definir la interfaz de usuario en XML usando una jerarquía de elementos de interfaz de usuario.
 
-Layouts are subclasses of the ViewGroup. In this exercise, you'll work with a LinearLayout.
+<img src="https://developer.android.com/images/viewgroup.png" width="600">
 
-https://developer.android.com/images/viewgroup.png
 
 ### [Mi primer layout](/chapter3/topic1.md)
 ### [Elementos de un layout](/chapter3/topic2.md)
