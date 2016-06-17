@@ -1,18 +1,18 @@
 ### Input Controls
 
-Input controls are the interactive components in your app's user interface. Android provides a wide variety of controls you can use in your UI, such as buttons, text fields, seek bars, checkboxes, zoom buttons, toggle buttons, and many more.
+Los inputs son los componentes interactivos en la interfaz de usuario de la aplicación. Android ofrece una amplia variedad de controles que se pueden utilizar en la interfaz de usuario, tales como buttons, text fields, seek bars, checkboxes, zoom buttons, toggle buttons, y muchos más.
 
-https://developer.android.com/images/ui/ui-controls.png
+<img src="https://developer.android.com/images/ui/ui-controls.png" width="400">
 
 #### Buttons
 
-A button consists of text or an icon (or both text and an icon) that communicates what action occurs when the user touches it.
+Un botón consiste en texto o un icono (o texto y un icono) que se comunica lo que se produce la acción cuando el usuario lo toca.
 
-https://developer.android.com/images/ui/button-types.png
+<img src="https://developer.android.com/images/ui/button-types.png" width="400">
 
-Depending on whether you want a button with text, an icon, or both, you can create the button in your layout in three ways:
+En función de si desea un botón con el texto, un icono, o ambos, puede crear el botón en su diseño de tres maneras:
 
-**With text, using the Button class:****
+**Con el texto, usando la clase Button:**
 
 ```xml
 <Button
@@ -22,7 +22,7 @@ Depending on whether you want a button with text, an icon, or both, you can crea
     ... />
 ```
 
-**With an icon, using the ImageButton class:**
+**Con un icono, utilizando la clase de imagen del botón:**
 ```xml
 <ImageButton
     android:layout_width="wrap_content"
@@ -30,7 +30,7 @@ Depending on whether you want a button with text, an icon, or both, you can crea
     android:src="@drawable/button_icon"
     ... />
 ```
-**With text and an icon, using the Button class with the android:drawableLeft attribute:**
+**Con texto y un icono, utilizando la clase Button con el atributo android:drawableLeft:**
 ```xml
 <Button
     android:layout_width="wrap_content"
@@ -40,13 +40,13 @@ Depending on whether you want a button with text, an icon, or both, you can crea
     ... />
 ```
 
-##### Responding to Click Events
+##### Respondiendo a Eventos de Click
 
-When the user clicks a button, the Button object receives an on-click event.
+Cuando el usuario hace clic en un botón, el objeto Button recibe un evento de clic.
 
-To define the click event handler for a button, add the android:onClick attribute to the <Button> element in your XML layout. The value for this attribute must be the name of the method you want to call in response to a click event. The Activity hosting the layout must then implement the corresponding method.
+Para definir el controlador de eventos Click para un botón, añadir el atributo android:onclick al elemento < Button > en su diseño XML. El valor de este atributo debe ser el nombre del método que desea llamar en respuesta a un evento de clic. La actividad de alojamiento a continuación, el diseño debe implementar el método correspondiente.
 
-For example, here's a layout with a button using android:onClick:
+Por ejemplo, aquí está un diseño con un botón con android:onClick :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -58,41 +58,41 @@ For example, here's a layout with a button using android:onClick:
     android:onClick="sendMessage" />
 ```
 
-Within the Activity that hosts this layout, the following method handles the click event:
+Dentro de la actividad que acoge esta vista, el siguiente método maneja el evento click:
 
 ```java
-/** Called when the user touches the button */
+/** Se llama cuando el usuario toca el botón */
 public void sendMessage(View view) {
-    // Do something in response to button click
+    // Hacer algo en respuesta al clic de botón
 }
 ```
 
-The method you declare in the android:onClick attribute must have a signature exactly as shown above. Specifically, the method must:
+El método se declara en el atributo android:onclick debe tener una firma tal y como se muestra arriba. En concreto, el método debe:
 
-+ Be public
-+ Return void
-+ Define a View as its only parameter (this will be the View that was clicked)
++ Ser publico
++ Devolver void
++ Definir un View como su único parámetro (esto será el view que se ha hecho clic)
 
-##### Using an OnClickListener
+##### Usando el OnClickListener
 
-You can also declare the click event handler programmatically rather than in an XML layout. This might be necessary if you instantiate the Button at runtime or you need to declare the click behavior in a Fragment subclass.
+También puede declarar el controlador de eventos mediante programación en lugar de hacer clic en un diseño XML. Esto puede ser necesario si usted instancia del botón en tiempo de ejecución o si tiene que declarar el comportamiento en una subclase Fragment.
 
-To declare the event handler programmatically, create an View.OnClickListener object and assign it to the button by calling setOnClickListener(View.OnClickListener). For example:
+Declarar el controlador de eventos mediante programación, crear un objeto View.OnClickListener y asignarla al botón llamando setOnClickListener (View.OnClickListener). Por ejemplo:
 
 ```java
 Button button = (Button) findViewById(R.id.button_send);
 button.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
-        // Do something in response to button click
+        // Hacer algo en respuesta al clic de botón
     }
 });
 ```
 
-##### Borderless button
+##### Button Sin bordes
 
-One design that can be useful is a "borderless" button. Borderless buttons resemble basic buttons except that they have no borders or background but still change appearance during different states, such as when clicked.
+Un diseño que puede ser útil es un botón "sin bordes". botones sin bordes parecen botones básicos, excepto que no tienen bordes ni fondo, pero aún cambian de aspecto durante diferentes estados, como cuando se hace clic.
 
-To create a borderless button, apply the borderlessButtonStyle style to the button. For example:
+Para crear un botón sin bordes, aplicar el estilo borderlessButtonStyle al botón. Por ejemplo:
 
 ```xml
 <Button
@@ -106,17 +106,17 @@ To create a borderless button, apply the borderlessButtonStyle style to the butt
 
 ##### Custom background
 
-If you want to truly redefine the appearance of your button, you can specify a custom background. Instead of supplying a simple bitmap or color, however, your background should be a state list resource that changes appearance depending on the button's current state.
+Si desea volver a definir realmente el aspecto de un botón, puede especificar un fondo personalizado. En lugar de proporcionar un mapa de bits simple o color, sin embargo, el fondo debe ser un recurso de la lista de estado que cambia de aspecto dependiendo del estado actual del botón.
 
-You can define the state list in an XML file that defines three different images or colors to use for the different button states.
+Se puede definir la lista del estado en un archivo XML que define tres imágenes o colores diferentes de usar para los diferentes estados de botón.
 
-To create a state list drawable for your button background:
+Para crear una lista de estados para su fondo de botón:
 
-1. Create three bitmaps for the button background that represent the default, pressed, and focused button states. To ensure that your images fit buttons of various sizes, create the bitmaps as Nine-patch bitmaps.
+1. Crear tres mapas de bits para el fondo del botón que representa el valor por defecto, presionado, y estados de botón enfocadas. Para asegurarse de que sus imágenes se ajustan los botones de diversos tamaños, crear los mapas de bits como mapas de bits de nueve parches.
 
-2. Place the bitmaps into the res/drawable/ directory of your project. Be sure each bitmap is named properly to reflect the button state that they each represent, such as button_default.9.png, button_pressed.9.png, and button_focused.9.png.
+2. Coloque los mapas de bits en res/drawable/. Asegúrese de que cada mapa de bits tiene el nombre correcto para reflejar el estado de los botones que representan cada uno, como button_default.9.png, button_pressed.9.png, y button_focused.9.png.
 
-3. Create a new XML file in the res/drawable/ directory (name it something like button_custom.xml). Insert the following XML:
+3. Crear un nuevo archivo XML en res/drawable (nombrarlo algo así como button_custom.xml). Inserte el siguiente código XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,9 +127,12 @@ To create a state list drawable for your button background:
           android:state_focused="true" />
     <item android:drawable="@drawable/button_default" />
 </selector>
-``
+```
 
-	Note: The order of the <item> elements is important. When this drawable is referenced, the <item> elements are traversed in-order to determine which one is appropriate for the current button state. Because the default bitmap is last, it is only applied when the conditions android:state_pressed and android:state_focused have both evaluated as false.
+	Nota: El orden de los elementos <item> es importante. Cuando se hace referencia a este
+    drawable, los elementos <item> son renderizados en el fin de determinar cuál es el adecuado
+    para el estado del botón actual. Debido a que el mapa de bits por defecto es la última, que
+    sólo se aplica cuando android ha evaluado las condiciones: state_pressed y android: state_focused como false.
 
 ```xml
 <Button
@@ -143,17 +146,17 @@ To create a state list drawable for your button background:
 
 #### Text Fields
 
-A text field allows the user to type text into your app. It can be either single line or multi-line. Touching a text field places the cursor and automatically displays the keyboard. In addition to typing, text fields allow for a variety of other activities, such as text selection (cut, copy, paste) and data look-up via auto-completion.
+Un campo de texto permite al usuario escribir texto en su aplicación. Puede ser una sola línea o varias líneas. Tocar un campo de texto coloca el cursor y muestra automáticamente el teclado. Además de escribir, campos de texto permiten una variedad de otras actividades, tales como la selección de texto (cortar, copiar, pegar) y datos de consulta a través de auto-completado.
 
-You can add a text field to you layout with the EditText object. You should usually do so in your XML layout with a <EditText> element.
+Puede añadir un campo de texto para usted diseño con el objeto EditText. Por lo general, debe hacerlo en su diseño de XML con un elemento < EditarTexto >.
 
-https://developer.android.com/images/ui/edittext-noextract.png
+<img src="https://developer.android.com/images/ui/edittext-noextract.png" width="400">
 
-##### Specifying the Keyboard Type
+##### Especificación del tipo de teclado
 
-Text fields can have different input types, such as number, date, password, or email address. The type determines what kind of characters are allowed inside the field, and may prompt the virtual keyboard to optimize its layout for frequently used characters.
+Los campos de texto pueden tener diferentes tipos de entrada, como el número, la fecha, la contraseña o dirección de correo electrónico. El tipo determina lo que está permitido tipo de caracteres dentro del campo, y le puede indicar el teclado virtual para optimizar su diseño para los caracteres utilizados con frecuencia.
 
-You can specify the type of keyboard you want for your EditText object with the android:inputType attribute. For example, if you want the user to input an email address, you should use the textEmailAddress input type:
+Se puede especificar el tipo de teclado que desea para su objeto EditText con el atributo android:inputType. Por ejemplo, si desea que el usuario introduzca una dirección de correo electrónico, se debe utilizar el tipo de entrada textEmailAddress:
 
 ```xml
 <EditText
@@ -164,7 +167,7 @@ You can specify the type of keyboard you want for your EditText object with the 
     android:inputType="textEmailAddress" />
 ```
 
-There are several different input types available for different situations. Here are some of the more common values for android:inputType:
+Hay varios tipos de entrada disponibles para diferentes situaciones. Éstos son algunos de los valores más comunes para android:inputType:
 
 **"text"**
 
@@ -172,49 +175,49 @@ There are several different input types available for different situations. Here
 
 **"textEmailAddress"**
 
-	Normal text keyboard with the @ character.
+	Normal text keyboard con el caracter @.
 
 **"textUri"**
 
-	Normal text keyboard with the / character.
+	Normal text keyboard con el caracter /.
 
 **"number"**
 
-	Basic number keypad.
+	Basico number keypad.
 
 **"phone"**
 
 	Phone-style keypad.
 
-##### Controlling other behaviors
+##### Control de otros comportamientos
 
-The android:inputType also allows you to specify certain keyboard behaviors, such as whether to capitalize all new words or use features like auto-complete and spelling suggestions.
+El androide: inputType también le permite especificar ciertos comportamientos del teclado, como si hacer mayusculas todas las palabras nuevas o características del uso como sugerencias de auto-completar y ortográficos.
 
-The android:inputType attribute allows bitwise combinations so you can specify both a keyboard layout and one or more behaviors at once.
+El atributo android:inputType permite combinaciones de bits para que pueda especificar un diseño de teclado y una o más conductas a la vez.
 
-Here are some of the common input type values that define keyboard behaviors:
+Éstos son algunos de los valores de tipo de entrada comunes que definen los comportamientos de teclado:
 
 **"textCapSentences"**
 
-	Normal text keyboard that capitalizes the first letter for each new sentence.
+	Normal text keyboard que capitaliza la primera letra de cada frase nueva.
 
 **"textCapWords"**
 
-	Normal text keyboard that capitalizes every word. Good for titles or person names.
+	Normal text keyboard que capitaliza cada palabra. Bueno para los títulos o nombres de personas.
 
 **"textAutoCorrect"**
 
-	Normal text keyboard that corrects commonly misspelled words.
+	Normal text keyboard que corrige las palabras mal escritas habitualmente.
 
 **"textPassword"**
 
-	Normal text keyboard, but the characters entered turn into dots.
+	Normal text keyboard, pero los caracteres introducidos se convierten en puntos.
 
 **"textMultiLine"**
 
-	Normal text keyboard that allow users to input long strings of text that include line breaks (carriage returns).
+	Normal text keyboard que permiten a los usuarios de entrada de largas cadenas de texto que incluyen saltos de línea.
 
-For example, here's how you can collect a postal address, capitalize each word, and disable text suggestions:
+Por ejemplo, he aquí cómo puede obtener una dirección postal, en mayúsculas cada palabra y desactivar las sugerencias de texto:
 
 ```xml
 <EditText
@@ -229,9 +232,9 @@ For example, here's how you can collect a postal address, capitalize each word, 
 
 ##### Specifying Keyboard Actions
 
-In addition to changing the keyboard's input type, Android allows you to specify an action to be made when users have completed their input. The action specifies the button that appears in place of the carriage return key and the action to be made, such as "Search" or "Send."
+Además de cambiar el tipo de entrada del teclado, Android le permite especificar una acción que se realiza cuando los usuarios hayan completado su entrada. La acción especifica el botón que aparece en lugar de la tecla de retorno de carro y la acción a realizar, tales como "Búsqueda" o "Enviar".
 
-You can specify the action by setting the android:imeOptions attribute. For example, here's how you can specify the Send action:
+Puede especificar la acción estableciendo con android:imeOptions. Por ejemplo, aquí es cómo se puede especificar la acción Enviar:
 
 ```xml
 <EditText
@@ -243,13 +246,13 @@ You can specify the action by setting the android:imeOptions attribute. For exam
     android:imeOptions="actionSend" />
 ```
 
-If you do not explicitly specify an input action then the system attempts to determine if there are any subsequent android:focusable fields. If any focusable fields are found following this one, the system applies the "actionNext" action to the current EditText so the user can select Next to move to the next field. If there's no subsequent focusable field, the system applies the "actionDone" action. You can override this by setting the android:imeOptions attribute to any other value such as "actionSend" or "actionSearch" or suppress the default behavior by using the "actionNone" action.
+Si no se especifica explícitamente una acción de entrada a continuación, el sistema intenta determinar si hay cualquier android antes, campos enfocables. Si cualquiera de los campos enfocable se encuentran a despues de éste, el sistema aplica la acción "actionNext" al EditText actual por lo que el usuario puede seleccionar Siguiente para pasar al siguiente campo. Si no hay ningún campo enfocable siguiente, el sistema aplica la acción "actionDone". Puede anular esta configurando el android:imeOptions cambiando por cualquier otro valor como "actionSend" o "actionSearch" o suprimir el comportamiento predeterminado mediante la acción "actionNone".
 
-##### Responding to action button events
+##### Respondiendo a la acción de button events
 
-If you have specified a keyboard action for the input method using android:imeOptions attribute (such as "actionSend"), you can listen for the specific action event using an TextView.OnEditorActionListener. The TextView.OnEditorActionListener interface provides a callback method called onEditorAction() that indicates the action type invoked with an action ID such as IME_ACTION_SEND or IME_ACTION_SEARCH.
+Si ha especificado una acción de teclado para el método de entrada usando android:imeOptions (como "actionSend"), se puede detectar el evento de acción específico utilizando un TextView.OnEditorActionListener. La interfaz TextView.OnEditorActionListener proporciona un método de llamado onEditorAction() que indica el tipo de acción invocada con un ID de acción como IME_ACTION_SEND o IME_ACTION_SEARCH.
 
-For example, here's how you can listen for when the user clicks the Send button on the keyboard:
+Por ejemplo, aquí es cómo se puede detectar cuando el usuario hace clic en el botón Enviar en el teclado:
 
 ```java
 EditText editText = (EditText) findViewById(R.id.search);
@@ -268,19 +271,19 @@ editText.setOnEditorActionListener(new OnEditorActionListener() {
 
 #### Checkboxes
 
-Checkboxes allow the user to select one or more options from a set. Typically, you should present each checkbox option in a vertical list.
+Los checkboxes permiten al usuario seleccionar una o más opciones de un conjunto. Por lo general, usted debe presentar cada opción de casilla de verificación en una lista vertical.
 
-https://developer.android.com/images/ui/checkboxes.png
+<img src="https://developer.android.com/images/ui/checkboxes.png" width="400">
 
-To create each checkbox option, create a CheckBox in your layout. Because a set of checkbox options allows the user to select multiple items, each checkbox is managed separately and you must register a click listener for each one.
+Para crear cada opción de checkbox, crear un CheckBox en su diseño. Debido a que un conjunto de opciones de checkbox permite al usuario seleccionar varios elementos, cada casilla es administrado por separado y se debe registrar un listener clic para cada uno.
 
-##### Responding to Click Events
+##### Respondiendo a eventos Click
 
-When the user selects a checkbox, the CheckBox object receives an on-click event.
+Cuando el usuario selecciona un checkbox, el objeto CheckBox recibe un evento de clic.
 
-To define the click event handler for a checkbox, add the android:onClick attribute to the <CheckBox> element in your XML layout. The value for this attribute must be the name of the method you want to call in response to a click event. The Activity hosting the layout must then implement the corresponding method.
+Para definir el controlador de eventos clic para un checkbox, añadir el android:onclick al elemento < CheckBox > en su diseño XML. El valor de este atributo debe ser el nombre del método que desea llamar en respuesta a un evento de clic. La actividad del diseño debe implementar el método correspondiente.
 
-For example, here are a couple CheckBox objects in a list:
+Por ejemplo, aquí hay un par de objetos CheckBox en una lista:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -301,37 +304,33 @@ For example, here are a couple CheckBox objects in a list:
 </LinearLayout>
 ```
 
-Within the Activity that hosts this layout, the following method handles the click event for both checkboxes:
+Dentro de la actividad esta el siguiente método que maneja el evento click para ambas casillas de verificación:
 
 ```java
 public void onCheckboxClicked(View view) {
-    // Is the view now checked?
+    // Es checked?
     boolean checked = ((CheckBox) view).isChecked();
 
-    // Check which checkbox was clicked
+    // Cual checkbox fue checkeado
     switch(view.getId()) {
         case R.id.checkbox_meat:
             if (checked)
-                // Put some meat on the sandwich
+                // Agrega carne al sandwich
             else
-                // Remove the meat
+                // Quitale la carne
             break;
         case R.id.checkbox_cheese:
             if (checked)
-                // Cheese me
+                // Ponle queso
             else
-                // I'm lactose intolerant
+                // No tolero el queso
             break;
-        // TODO: Veggie sandwich
     }
 }
 ```
-
-The method you declare in the android:onClick attribute must have a signature exactly as shown above. Specifically, the method must:
-
-+ Be public
-+ Return void
-+ Define a View as its only parameter (this will be the View that was clicked)
++ Ser publico
++ Devolver void
++ Definir un View como su único parámetro (esto será el view que se ha hecho clic)
 
 #### Radio Buttons
 
