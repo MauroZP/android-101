@@ -14,5 +14,5 @@ Android proporciona un vocabulario XML que corresponde a las subclases de View y
 ### [Input Controls](/chapter3/topic3.md)
 ### [Guardando conjuntos Key-Value](/chapter3/topic4.md)
 ### [Menús](/chapter3/topic5.md)
-### Diálogos
+### [Diálogos](/chapter3/topic6.md)
 ### Estilos y temas

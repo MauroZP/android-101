@@ -334,19 +334,19 @@ public void onCheckboxClicked(View view) {
 
 #### Radio Buttons
 
-Radio buttons allow the user to select one option from a set. You should use radio buttons for optional sets that are mutually exclusive if you think that the user needs to see all available options side-by-side. If it's not necessary to show all options side-by-side, use a spinner instead.
+Los radio buttons permiten al usuario seleccionar una opción de un conjunto. Debe utilizar los radio buttons para los conjuntos opcionales que son mutuamente excluyentes si usted piensa que el usuario necesita ver todas las opciones disponibles de lado a lado. Si no es necesario para mostrar todas las opciones de lado a lado, utilizar un spinner en su lugar.
 
-https://developer.android.com/images/ui/radiobuttons.png
+<img src="https://developer.android.com/images/ui/radiobuttons.png" width="400">
 
-To create each radio button option, create a RadioButton in your layout. However, because radio buttons are mutually exclusive, you must group them together inside a RadioGroup. By grouping them together, the system ensures that only one radio button can be selected at a time.
+Para crear cada opción, crear un RadioButton en su diseño. Sin embargo, ya que los botones de radio son mutuamente excluyentes, es necesario agruparlos juntos dentro de una RadioGroup. Agrupándolas, el sistema garantiza que sólo un botón de opción se puede seleccionar a la vez.
 
-##### Responding to Click Events
+##### Respondiendo a to Click Events
 
-When the user selects one of the radio buttons, the corresponding RadioButton object receives an on-click event.
+Cuando el usuario selecciona uno de los radio button, el objeto RadioButton correspondiente recibe un evento de clic.
 
-To define the click event handler for a button, add the android:onClick attribute to the <RadioButton> element in your XML layout. The value for this attribute must be the name of the method you want to call in response to a click event. The Activity hosting the layout must then implement the corresponding method.
+Para definir el Click para un botón, añadir el android:onclick atributo al elemento <RadioButton> en su diseño XML. El valor de este atributo debe ser el nombre del método que desea llamar en respuesta a un evento de clic. La actividad de alojamiento a continuación.
 
-For example, here are a couple RadioButton objects:
+Por ejemplo, aquí hay un par de objetos RadioButton:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -367,9 +367,9 @@ For example, here are a couple RadioButton objects:
 </RadioGroup>
 ```
 
-	Note: The RadioGroup is a subclass of LinearLayout that has a vertical orientation by default.
+	Nota: El RadioGroup es una subclase de LinearLayout que tiene una orientación vertical de forma predeterminada.
 
-Within the Activity that hosts this layout, the following method handles the click event for both radio buttons:
+Dentro de la actividad, el siguiente método maneja el evento click para ambos botones de radio:
 
 ```java
 public void onRadioButtonClicked(View view) {
@@ -388,28 +388,26 @@ public void onRadioButtonClicked(View view) {
             break;
     }
 }
-
-The method you declare in the android:onClick attribute must have a signature exactly as shown above. Specifically, the method must:
-
-+ Be public
-+ Return void
-+ Define a View as its only parameter (this will be the View that was clicked)
-
 ```
 
+El método que se declara en el android:onclick atributo debe tener una firma tal y como se muestra arriba. En concreto, el método debe :
+
++ Ser publico
++ Devolver void
++ Definir un View como su único parámetro (esto será el view que se ha hecho clic)
 
 
 #### Toggle Buttons
 
-A toggle button allows the user to change a setting between two states.
+Un botón toglle permite al usuario cambiar un ajuste entre dos estados.
 
-You can add a basic toggle button to your layout with the ToggleButton object. Android 4.0 (API level 14) introduces another kind of toggle button called a switch that provides a slider control, which you can add with a Switch object.
+Puede añadir un botón toglle use el objeto ToggleButton. Android 4.0 (API de nivel 14) introduce otro tipo de botón de conmutación llama un interruptor que proporciona un control deslizante, el cual puede añadir con un objeto Switch.
 
-https://developer.android.com/images/ui/switch.png
+<img src="https://developer.android.com/images/ui/switch.png" width="400">
 
-##### Responding to Button Presses
+##### Respondiendo al evento click del Button
 
-To detect when the user activates the button or switch, create an CompoundButton.OnCheckedChangeListener object and assign it to the button by calling setOnCheckedChangeListener(). For example:
+Para detectar cuando el usuario activa el botón o interruptor, crear un objeto CompoundButton.OnCheckedChangeListener y asignarla al botón llamando setOnCheckedChangeListener (). Por ejemplo:
 
 ```java
 ToggleButton toggle = (ToggleButton) findViewById(R.id.togglebutton);
@@ -426,11 +424,11 @@ toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
 #### Spinners
 
-Spinners provide a quick way to select one value from a set. In the default state, a spinner shows its currently selected value. Touching the spinner displays a dropdown menu with all other available values, from which the user can select a new one.
+Un Spinner proporcionan una manera rápida para seleccionar un valor de un conjunto. En el estado por defecto, una ruleta muestra su valor seleccionado en ese momento. Al tocar el spinner muestra un menú desplegable con todos los demás valores disponibles, de los cuales el usuario puede seleccionar una nueva.
 
-https://developer.android.com/images/ui/spinner.png
+<img src="https://developer.android.com/images/ui/spinner.png" width="400">
 
-You can add a spinner to your layout with the Spinner object. You should usually do so in your XML layout with a <Spinner> element. For example:
+Puede agregar este control con el objeto Spinner. Por lo general, debe hacerlo en su diseño de XML con un elemento <Spinner>. Por ejemplo:
 
 ```xml
 <Spinner
@@ -440,13 +438,13 @@ You can add a spinner to your layout with the Spinner object. You should usually
 
 ```
 
-To populate the spinner with a list of choices, you then need to specify a SpinnerAdapter in your Activity or Fragment source code.
+Para llenar la ruleta con una lista de opciones, este caso es necesario especificar un SpinnerAdapter en su actividad o un Fragment.
 
-##### Populate the Spinner with User Choices
+##### Llenar el Spinner con opciones del usuario
 
-The choices you provide for the spinner can come from any source, but must be provided through an SpinnerAdapter, such as an ArrayAdapter if the choices are available in an array or a CursorAdapter if the choices are available from a database query.
+Las cadenas que llenan el spinner pueden venir de cualquier fuente, pero tienen que ser proporcionadas a través de un SpinnerAdapter, tal como un ArrayAdapter si las opciones están disponibles en una array o un CursorAdapter si las opciones están disponibles a partir de una consulta de base de datos.
 
-For instance, if the available choices for your spinner are pre-determined, you can provide them with a string array defined in a string resource file:
+Por ejemplo, si las opciones disponibles para su spinner son pre-determinado, se les puede proporcionar con una array de cadenas se definen en un archivo de recurso de arrays:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -463,30 +461,31 @@ For instance, if the available choices for your spinner are pre-determined, you 
     </string-array>
 </resources>
 ```
-With an array such as this one, you can use the following code in your Activity or Fragment to supply the spinner with the array using an instance of ArrayAdapter:
+
+Puede utilizar el siguiente código en su actividad o fragmento para abastecer el spinner con el array mediante una instancia de ArrayAdapter:
 
 ```java
 Spinner spinner = (Spinner) findViewById(R.id.spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+// Crear una ArrayAdapter utilizando el array de strings y un diseño predeterminado spinner
 ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
         R.array.planets_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+// Especificar el diseño a utilizar cuando aparezca la lista de opciones
 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+// Aplicar el adapter a la spinner
 spinner.setAdapter(adapter);
 ```
 
-The createFromResource() method allows you to create an ArrayAdapter from the string array. The third argument for this method is a layout resource that defines how the selected choice appears in the spinner control. The simple_spinner_item layout is provided by the platform and is the default layout you should use unless you'd like to define your own layout for the spinner's appearance.
+El método createFromResource() le permite crear una ArrayAdapter del array de strings. El tercer argumento de este método es un recurso de diseño que define la forma en que aparecera la opción seleccionada. La disposición simple_spinner_item es proporcionado por la plataforma y es el diseño predeterminado que debe utilizar a menos que desea definir su propio diseño de la apariencia del spinner.
 
-You should then call setDropDownViewResource(int) to specify the layout the adapter should use to display the list of spinner choices (simple_spinner_dropdown_item is another standard layout defined by the platform).
+A continuación, debe llamar setDropDownViewResource(int) para especificar el diseño del adaptador debe utilizar para mostrar la lista de opciones (simple_spinner_dropdown_item es otro diseño estándar definido por la plataforma).
 
-Call setAdapter() to apply the adapter to your Spinner.
+Llame setAdapter() para aplicar el adaptador a su Spinner.
 
-##### Responding to User Selections
+##### Respondiendo a la selección de usuario
 
-When the user selects an item from the drop-down, the Spinner object receives an on-item-selected event.
+Cuando el usuario selecciona un elemento de la lista desplegable, el objeto Spinner recibe un evento en el elemento seleccionado.
 
-To define the selection event handler for a spinner, implement the AdapterView.OnItemSelectedListener interface and the corresponding onItemSelected() callback method. For example, here's an implementation of the interface in an Activity:
+Para definir el controlador de eventos, implementar la interfaz AdapterView.OnItemSelectedListener y el método de devolución de llamada correspondiente onItemSelected(). Por ejemplo, aquí está una implementación de la interfaz en una actividad:
 
 ```java
 public class SpinnerActivity extends Activity implements OnItemSelectedListener {
@@ -494,169 +493,23 @@ public class SpinnerActivity extends Activity implements OnItemSelectedListener 
 
     public void onItemSelected(AdapterView<?> parent, View view,
             int pos, long id) {
-        // An item was selected. You can retrieve the selected item using
+        // Se ha seleccionado un elemento. Puede recuperar el elemento seleccionado usando
         // parent.getItemAtPosition(pos)
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
+        // Otra interfaz de devolución de llamada
     }
 }
 ```
 
-The AdapterView.OnItemSelectedListener requires the onItemSelected() and onNothingSelected() callback methods.
+El AdapterView.OnItemSelectedListener requiere que se implementen los onItemSelected() y onNothingSelected().
 
-Then you need to specify the interface implementation by calling setOnItemSelectedListener():
+Luego hay que especificar la implementación de la interfaz llamando setOnItemSelectedListener():
 
 ```java
 Spinner spinner = (Spinner) findViewById(R.id.spinner);
 spinner.setOnItemSelectedListener(this);
 ```
 
-If you implement the AdapterView.OnItemSelectedListener interface with your Activity or Fragment (such as in the example above), you can pass this as the interface instance.
-
-#### Pickers
-
-Android provides controls for the user to pick a time or pick a date as ready-to-use dialogs. Each picker provides controls for selecting each part of the time (hour, minute, AM/PM) or date (month, day, year). Using these pickers helps ensure that your users can pick a time or date that is valid, formatted correctly, and adjusted to the user's locale.
-
-https://developer.android.com/images/ui/pickers.png
-
-##### Creating a Time Picker
-
-To display a TimePickerDialog using DialogFragment, you need to define a fragment class that extends DialogFragment and return a TimePickerDialog from the fragment's onCreateDialog() method.
-
-###### Extending DialogFragment for a time picker
-
-To define a DialogFragment for a TimePickerDialog, you must:
-
-1. Define the onCreateDialog() method to return an instance of TimePickerDialog
-
-2. Implement the TimePickerDialog.OnTimeSetListener interface to receive a callback when the user sets the time.
-
-Here's an example:
-
-```java
-public static class TimePickerFragment extends DialogFragment
-                            implements TimePickerDialog.OnTimeSetListener {
-
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the current time as the default values for the picker
-        final Calendar c = Calendar.getInstance();
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        int minute = c.get(Calendar.MINUTE);
-
-        // Create a new instance of TimePickerDialog and return it
-        return new TimePickerDialog(getActivity(), this, hour, minute,
-                DateFormat.is24HourFormat(getActivity()));
-    }
-
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        // Do something with the time chosen by the user
-    }
-}
-```
-
-###### Showing the time picker
-
-Once you've defined a DialogFragment like the one shown above, you can display the time picker by creating an instance of the DialogFragment and calling show().
-
-For example, here's a button that, when clicked, calls a method to show the dialog:
-
-```xml
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/pick_time"
-    android:onClick="showTimePickerDialog" />
-    ```
-
-When the user clicks this button, the system calls the following method:
-
-```java
-public void showTimePickerDialog(View v) {
-    DialogFragment newFragment = new TimePickerFragment();
-    newFragment.show(getSupportFragmentManager(), "timePicker");
-}
-```
-
-This method calls show() on a new instance of the DialogFragment defined above. The show() method requires an instance of FragmentManager and a unique tag name for the fragment.
-
-##### Creating a Date Picker
-
-Creating a DatePickerDialog is just like creating a TimePickerDialog. The only difference is the dialog you create for the fragment.
-
-To display a DatePickerDialog using DialogFragment, you need to define a fragment class that extends DialogFragment and return a DatePickerDialog from the fragment's onCreateDialog() method.
-
-###### Extending DialogFragment for a date picker
-
-To define a DialogFragment for a DatePickerDialog, you must:
-
-1. Define the onCreateDialog() method to return an instance of DatePickerDialog
-
-2. Implement the DatePickerDialog.OnDateSetListener interface to receive a callback when the user sets the date.
-
-Here's an example:
-
-```java
-public static class DatePickerFragment extends DialogFragment
-                            implements DatePickerDialog.OnDateSetListener {
-
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the current date as the default date in the picker
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
-
-        // Create a new instance of DatePickerDialog and return it
-        return new DatePickerDialog(getActivity(), this, year, month, day);
-    }
-
-    public void onDateSet(DatePicker view, int year, int month, int day) {
-        // Do something with the date chosen by the user
-    }
-}
-```
-
-Now all you need is an event that adds an instance of this fragment to your activity
-
-###### Showing the date picker
-
-Once you've defined a DialogFragment like the one shown above, you can display the date picker by creating an instance of the DialogFragment and calling show().
-
-For example, here's a button that, when clicked, calls a method to show the dialog:
-
-```xml
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/pick_date"
-    android:onClick="showDatePickerDialog" />
-```
-
-When the user clicks this button, the system calls the following method:
-
-```java
-public void showDatePickerDialog(View v) {
-    DialogFragment newFragment = new DatePickerFragment();
-    newFragment.show(getSupportFragmentManager(), "datePicker");
-}
-```
-
-This method calls show() on a new instance of the DialogFragment defined above. The show() method requires an instance of FragmentManager and a unique tag name for the fragment.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Si implementa la interfaz AdapterView.OnItemSelectedListener con su actividad o fragmento (como en el ejemplo anterior), puede pasar esto como la instancia de interfaz.
