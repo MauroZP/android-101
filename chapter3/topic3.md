@@ -420,7 +420,7 @@ toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
         }
     }
 });
-``
+```
 
 #### Spinners
 
@@ -435,7 +435,6 @@ Puede agregar este control con el objeto Spinner. Por lo general, debe hacerlo e
     android:id="@+id/planets_spinner"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" />
-
 ```
 
 Para llenar la ruleta con una lista de opciones, este caso es necesario especificar un SpinnerAdapter en su actividad o un Fragment.

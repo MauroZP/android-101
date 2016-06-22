@@ -112,9 +112,9 @@ Ahora todo lo que necesita es un evento que agrega una instancia de este fragmen
 
 ###### Mostrando el date picker
 
-Once you've defined a DialogFragment like the one shown above, you can display the date picker by creating an instance of the DialogFragment and calling show().
+Una vez que haya definido una DialogFragment como el que se muestra arriba, se puede visualizar el selector de fecha mediante la creación de una instancia de la DialogFragment y llamar a show().
 
-For example, here's a button that, when clicked, calls a method to show the dialog:
+Por ejemplo, aquí hay un botón que, al ser pulsado, llama a un método para mostrar el cuadro de diálogo:
 
 ```xml
 <Button
@@ -124,7 +124,7 @@ For example, here's a button that, when clicked, calls a method to show the dial
     android:onClick="showDatePickerDialog" />
 ```
 
-When the user clicks this button, the system calls the following method:
+Cuando el usuario hace clic en el botón, el sistema llama el método siguiente:
 
 ```java
 public void showDatePickerDialog(View v) {
@@ -133,7 +133,7 @@ public void showDatePickerDialog(View v) {
 }
 ```
 
-This method calls show() on a new instance of the DialogFragment defined above. The show() method requires an instance of FragmentManager and a unique tag name for the fragment.
+Este método llama show() en una nueva instancia de la DialogFragment definido anteriormente. El método show() requiere una instancia de FragmentManager y un nombre de etiqueta única para el fragmento.
 
 
 
