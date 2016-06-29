@@ -420,7 +420,7 @@ toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
         }
     }
 });
-```
+``
 
 #### Spinners
 
