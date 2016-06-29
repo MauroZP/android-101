@@ -25,8 +25,6 @@ El primero de los fragment a definir contendrá tan sólo un control ListView, p
 ```
 
 ```java
-package net.sgoliver.android.fragments;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
