@@ -20,30 +20,33 @@ https://source.android.com/
 
 https://developer.android.com/about/dashboards/index.html#Platform
 
-|Code name	|Version	|API level
-| ------------- |:-------------:| -----:|
-| Marshmallow	| 6.0			|	API level 23
-|Lollipop		| 5.1	| API level 22
-|Lollipop	|5.0	| API level 21
-|KitKat	|4.4 - 4.4.4	|API level 19
-|Jelly Bean	|4.3.x	|API level 18
-|Jelly Bean	|4.2.x	|API level 17
-|Jelly Bean	|4.1.x	|API level 16
-|Ice Cream Sandwich	|4.0.3 - 4.0.4	|API level 15, NDK 8
-|Ice Cream Sandwich	|4.0.1 - 4.0.2	|API level 14, NDK 7
-|Honeycomb	|3.2.x	|API level 13
-|Honeycomb	|3.1	|API level 12, NDK 6
-|Honeycomb	|3.0	|API level 11
-|Gingerbread	|2.3.3 - 2.3.7	|API level 10
-|Gingerbread	|2.3 - 2.3.2	|API level 9, NDK 5
-|Froyo	|2.2.x	|API level 8, NDK 4
-|Eclair	|2.1	|API level 7, NDK 3
-|Eclair	|2.0.1	|API level 6
-|Eclair	|2.0	|API level 5
-|Donut	|1.6	|API level 4, NDK 2
-|Cupcake	|1.5	|API level 3, NDK 1
-|(no code name)	|1.1	|API level 2
-|(no code name)	|1.0	|API level 1
+|Code name	|Version	|API level | Distribution
+| ------------- |:-------------:| -----:| -----:|
+| Oreo | 8.0 | API level 26 | N/A
+| Nougat | 7.1 | API level 25 | 1.6%
+| Nougat | 7.0 | API level 24 | 14.2%
+| Marshmallow	| 6.0			|	API level 23 | 32.2%
+|Lollipop		| 5.1	| API level 22 | 21.7%
+|Lollipop	|5.0	| API level 21 | 7.1%
+|KitKat	|4.4 - 4.4.4	|API level 19 | 15.1%
+|Jelly Bean	|4.3.x	|API level 18 | 1.0%
+|Jelly Bean	|4.2.x	|API level 17 | 3.5%
+|Jelly Bean	|4.1.x	|API level 16 | 2.4%
+|Ice Cream Sandwich	|4.0.3 - 4.0.4	|API level 15, NDK 8 | 0.6%
+|Ice Cream Sandwich	|4.0.1 - 4.0.2	|API level 14, NDK 7 | > 0.1% 
+|Honeycomb	|3.2.x	|API level 13 | > 0.1%
+|Honeycomb	|3.1	|API level 12, NDK 6 | > 0.1%
+|Honeycomb	|3.0	|API level 11 | > 0.1%
+|Gingerbread	|2.3.3 - 2.3.7	|API level 10 | 0.6%
+|Gingerbread	|2.3 - 2.3.2	|API level 9, NDK 5 | > 0.1%
+|Froyo	|2.2.x	|API level 8, NDK 4 | > 0.1%
+|Eclair	|2.1	|API level 7, NDK 3 | > 0.1%
+|Eclair	|2.0.1	|API level 6 | > 0.1%
+|Eclair	|2.0	|API level 5 | > 0.1%
+|Donut	|1.6	|API level 4, NDK 2 | > 0.1%
+|Cupcake	|1.5	|API level 3, NDK 1 | > 0.1%
+|(no code name)	|1.1	|API level 2 | > 0.1%
+|(no code name)	|1.0	|API level 1 | > 0.1%
 
 ### Arquitectura
 
