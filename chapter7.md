@@ -1,3 +1,3 @@
-# Modulo 3 - Trabajo con Layouts
+# Modulo 7 - Cómo publicar tu app dentro de Google Play
 
-#### Disponible a partir del 11 de Julio
+#### No disponible por el momento

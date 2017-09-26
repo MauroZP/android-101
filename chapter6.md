@@ -1,3 +1,3 @@
-# Modulo 7 - Cómo publicar tu app dentro de Google Play
+# Modulo 6 - Cómo empaquetar y preparar una app para publicarla
 
-#### Disponible a partir del 11 de Julio
+#### No disponible por el momento
