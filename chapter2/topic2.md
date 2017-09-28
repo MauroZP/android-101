@@ -14,7 +14,7 @@
 
 3. En **Select the form factors your app will run on**, selecciona la opción **Phone and Tablet**.
 
-4. Para **Minimum SDK**, selecciona API 15: Android 4.0.3 (IceCreamSandwich).
+4. Para **Minimum SDK**, selecciona API 19: Android 4.4 (KitKat).
 
 	El SDK Obligatorio mínimo es la primera versión de Android que sus soportes de aplicaciones, indican usando el nivel de la API. Para soportar el mayor numero de dispositivos que sea posible, debe establecer este a la versión más baja disponible que abarque el mayor numero de usuarios o su mercado deseado. Si alguna de las funciones de su aplicación sólo es posible en las versiones más recientes de Android y no es crítica para el conjunto de características de la aplicación, se puede habilitar la función sólo cuando se ejecuta en las versiones que lo soportan.
 
@@ -26,5 +26,5 @@
 
 8. Click the **Finish** button to create the project.
 
-###[Anterior (Hola mundo - Primera app)](/chapter2/topic2.md)
+###[Anterior (Hola mundo - Primera app)](/chapter2/topic1.md)
 ###[Siguiente (Estructura de proyecto Android)](/chapter2/topic3.md)

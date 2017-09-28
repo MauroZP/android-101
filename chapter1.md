@@ -2,7 +2,7 @@
 
 ### Java para Android Cheat Sheet and Quick Ref
 
-http://www.raywenderlich.com/wp-content/uploads/2015/10/RW-Java-Cheatsheet-1_0.pdf
+https://koenig-media.raywenderlich.com/uploads/2015/10/RW-Java-Cheatsheet-1_0.pdf
 
 ### ¿Que es Android?
 
